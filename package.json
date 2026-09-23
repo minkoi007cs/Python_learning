@@ -1,0 +1,11 @@
+{
+  "name": "pypath-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify:process": "node scripts/verify-process-update.mjs",
+    "verify:process:ci": "node scripts/verify-process-update.mjs --ci"
+  },
+  "packageManager": "pnpm@9.0.0"
+}
