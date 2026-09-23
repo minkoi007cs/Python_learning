@@ -1,0 +1,5 @@
+id: mod-13-files
+slug: module-13-files
+title: "Module 13: File Handling"
+description: "Read, write, and append files safely using open() and context managers (with open(...))."
+position: 13

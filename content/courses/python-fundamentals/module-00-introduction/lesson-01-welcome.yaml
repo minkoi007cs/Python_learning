@@ -1,0 +1,51 @@
+id: lesson-intro-01
+slug: welcome-to-python
+title: Welcome to Python
+estimated_minutes: 5
+concept_ids:
+  - introduction.print
+  - syntax.basic
+
+sections:
+  - type: markdown
+    content: |
+      ### What is Programming?
+      Programming is simply writing a sequence of step-by-step instructions that tell a computer what to do.
+
+      ### Why Python?
+      Python is one of the world's most popular programming languages because of its clean, readable syntax that resembles plain English. It is used in web development, data science, artificial intelligence, automation, and more.
+
+      ### Your First Instruction: `print()`
+      In Python, we use the built-in `print()` function to display text or numbers on the screen.
+      Text must be enclosed in quotation marks (`"` or `'`), which tells Python it is a **string**.
+
+  - type: code_example
+    language: python
+    code: |
+      print("Hello, World!")
+    explanation: |
+      When Python executes this line, it outputs `Hello, World!` to the console.
+
+  - type: exercise
+    exercise:
+      id: ex-intro-01
+      title: Print Your First Message
+      instructions: |
+        Use the `print()` function to display the exact text `"Hello, PyPath!"` to the screen.
+      starter_code: |
+        # Write your print statement below:
+
+      solution_code: |
+        print("Hello, PyPath!")
+      hints:
+        - "Remember that the print function is spelled in all lowercase: print(...)"
+        - "Enclose the text in double quotes: \"Hello, PyPath!\""
+        - "Make sure to match the exact capitalization and punctuation: Hello, PyPath!"
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "Outputs 'Hello, PyPath!'"
+          assertion: "stdout.strip() == 'Hello, PyPath!'"
+      hidden_tests:
+        - name: "Output is not empty"
+          assertion: "len(stdout.strip()) > 0"

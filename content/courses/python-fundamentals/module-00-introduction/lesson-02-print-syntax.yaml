@@ -1,0 +1,52 @@
+id: lesson-intro-02
+slug: multiple-lines-and-syntax
+title: Printing Multiple Lines & Syntax
+estimated_minutes: 8
+concept_ids:
+  - introduction.print
+  - syntax.multiline
+
+sections:
+  - type: markdown
+    content: |
+      ### Executing Multiple Lines
+      Python programs execute line by line, from top to bottom. If you call `print()` multiple times, each message appears on a new line in the console.
+
+      ### Case Sensitivity
+      Python is strictly **case-sensitive**. `Print` or `PRINT` will cause a `NameError` because Python only recognizes `print` in lowercase.
+
+  - type: code_example
+    language: python
+    code: |
+      print("First line")
+      print("Second line")
+      print("Third line")
+    explanation: |
+      Each `print()` statement prints on its own line in order.
+
+  - type: exercise
+    exercise:
+      id: ex-intro-02
+      title: Fix the Syntax & Print Multiple Lines
+      instructions: |
+        The code below has syntax bugs!
+        1. Fix the capitalization of `Print`.
+        2. Print two lines: `"Python is fun"` on line 1, and `"I am ready to code"` on line 2.
+      starter_code: |
+        # Fix the bugs below:
+        Print("Python is fun")
+        print("I am ready to code"
+      solution_code: |
+        print("Python is fun")
+        print("I am ready to code")
+      hints:
+        - "Change Print to lowercase print on the first line."
+        - "Don't forget the closing parenthesis ) on the second line."
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "Outputs two lines of text correctly"
+          assertion: "'Python is fun' in stdout and 'I am ready to code' in stdout"
+      hidden_tests:
+        - name: "Lines are printed in correct order"
+          assertion: "stdout.find('Python is fun') < stdout.find('I am ready to code')"

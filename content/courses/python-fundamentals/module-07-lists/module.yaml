@@ -1,0 +1,5 @@
+id: mod-07-lists
+slug: module-07-lists
+title: "Module 7: Lists"
+description: "Master ordered collections, list indexing, slicing, mutability, and methods (.append(), .pop(), .remove(), len())."
+position: 7

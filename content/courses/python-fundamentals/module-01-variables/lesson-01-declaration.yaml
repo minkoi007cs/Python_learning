@@ -1,0 +1,65 @@
+id: lesson-vars-01
+slug: creating-variables
+title: Creating Variables
+estimated_minutes: 8
+concept_ids:
+  - variables.declaration
+  - variables.assignment
+
+sections:
+  - type: markdown
+    content: |
+      ### Storing Information in Variables
+      A **variable** is a named reference in your computer's memory used to store data.
+      In Python, you create a variable by giving it a name, followed by the assignment operator `=`, followed by the value.
+
+      ```python
+      player_name = "Alex"
+      score = 100
+      ```
+
+      ### Variable Naming Rules
+      - Variable names must start with a letter or underscore (`_`), never a number.
+      - Use `snake_case` (lowercase words separated by underscores), e.g. `user_age`, `total_price`.
+      - Avoid Python reserved keywords like `def`, `class`, `if`, `while`.
+
+  - type: code_example
+    language: python
+    code: |
+      username = "Ada"
+      level = 5
+      print(username)
+      print(level)
+    explanation: |
+      Python stores `"Ada"` in `username` and `5` in `level`, then retrieves and prints them.
+
+  - type: exercise
+    exercise:
+      id: ex-vars-01
+      title: Declare Player Variables
+      instructions: |
+        1. Create a variable named `name` with the string value `"Alex"`.
+        2. Create a variable named `age` with the integer value `18`.
+        3. Print both variables using `print(name)` and `print(age)`.
+      starter_code: |
+        # Create your variables below:
+
+      solution_code: |
+        name = "Alex"
+        age = 18
+        print(name)
+        print(age)
+      hints:
+        - "Use = to assign values: name = \"Alex\""
+        - "Do not put quotes around the number 18: age = 18"
+        - "Call print(name) and print(age)"
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "Variable 'name' is defined and equals 'Alex'"
+          assertion: "namespace.get('name') == 'Alex'"
+        - name: "Variable 'age' is defined and equals 18"
+          assertion: "namespace.get('age') == 18"
+      hidden_tests:
+        - name: "Both variables are printed to stdout"
+          assertion: "'Alex' in stdout and '18' in stdout"

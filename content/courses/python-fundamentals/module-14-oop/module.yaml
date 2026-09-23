@@ -1,0 +1,5 @@
+id: mod-14-oop
+slug: module-14-oop
+title: "Module 14: Object-Oriented Programming"
+description: "Model real-world entities using classes, objects, instance attributes, methods, and the __init__ constructor."
+position: 14

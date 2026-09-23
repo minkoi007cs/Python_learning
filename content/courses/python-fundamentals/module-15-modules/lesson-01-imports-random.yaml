@@ -1,0 +1,74 @@
+id: lesson-modules-01
+slug: using-standard-modules
+title: Importing Modules & Standard Libraries
+estimated_minutes: 12
+concept_ids:
+  - modules.import
+  - stdlib.math
+  - stdlib.random
+
+sections:
+  - type: markdown
+    content: |
+      ### Python's "Batteries Included" Philosophy
+      Python comes packaged with hundreds of battle-tested modules in its standard library. You incorporate them using `import`:
+
+      ```python
+      import math
+      print(math.sqrt(16))  # 4.0
+
+      import random
+      print(random.randint(1, 6))  # Random roll between 1 and 6
+      ```
+
+      ### Import Syntax Variations
+      - `import math`: access functions with `math.function()`
+      - `from math import sqrt, pi`: access `sqrt()` directly
+      - `import random as rnd`: alias a module name
+
+  - type: code_example
+    language: python
+    code: |
+      import math
+
+      radius = 5.0
+      area = math.pi * (radius ** 2)
+      print(f"Circle Area: {round(area, 2)}")
+    explanation: |
+      Computes the area of a circle using `math.pi`.
+
+  - type: exercise
+    exercise:
+      id: ex-modules-01
+      title: Random Password Generator Function
+      instructions: |
+        Use Python's built-in `random` and `string` modules:
+        1. Define a function named `generate_passcode(length=6)`:
+        2. The function should use `random.choice("0123456789")` to generate a numeric PIN string of the given `length`.
+        3. Return the generated PIN string.
+      starter_code: |
+        import random
+
+        # Define generate_passcode below:
+
+      solution_code: |
+        import random
+
+        def generate_passcode(length=6):
+            digits = "0123456789"
+            return "".join(random.choice(digits) for _ in range(length))
+      hints:
+        - "Use ''.join(...) with a generator or loop calling random.choice('0123456789')."
+        - "Return a string of the requested length."
+      difficulty: EASY
+      xp_reward: 15
+      visible_tests:
+        - name: "Passcode has correct default length of 6"
+          assertion: "len(namespace['generate_passcode']()) == 6"
+        - name: "Passcode consists of digits"
+          assertion: "namespace['generate_passcode']().isdigit()"
+        - name: "Passcode respects custom length 4"
+          assertion: "len(namespace['generate_passcode'](4)) == 4"
+      hidden_tests:
+        - name: "Passcode output varies randomly"
+          assertion: "namespace['generate_passcode'](10) != namespace['generate_passcode'](10)"

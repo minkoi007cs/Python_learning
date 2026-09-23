@@ -1,0 +1,68 @@
+id: lesson-files-01
+slug: working-with-files
+title: Reading & Writing Files with Context Managers
+estimated_minutes: 12
+concept_ids:
+  - files.read_write
+  - files.context_managers
+
+sections:
+  - type: markdown
+    content: |
+      ### Using Context Managers with `open()`
+      In Python, the safest way to work with files is using the `with open(...)` statement. It automatically flushes and closes the file even if errors occur.
+
+      ```python
+      with open("notes.txt", "w") as f:
+          f.write("Learning Python!\n")
+      ```
+
+      ### File Modes
+      - `"w"` : Write mode (overwrites file)
+      - `"r"` : Read mode (default)
+      - `"a"` : Append mode (adds to the end)
+
+  - type: code_example
+    language: python
+    code: |
+      with open("hello.txt", "w") as f:
+          f.write("PyPath Notes")
+
+      with open("hello.txt", "r") as f:
+          content = f.read()
+
+      print(f"Read: {content}")
+    explanation: |
+      Writes text to a virtual file and reads it back safely.
+
+  - type: exercise
+    exercise:
+      id: ex-files-01
+      title: "Notes Manager: Write & Read"
+      instructions: |
+        1. Open a file named `"log.txt"` in write mode (`"w"`).
+        2. Write the line `"System Initialized\n"` to it.
+        3. Now open `"log.txt"` in read mode (`"r"`), read its content into a variable `log_content`.
+        4. Print `log_content`.
+      starter_code: |
+        # Write and read log.txt below:
+
+      solution_code: |
+        with open("log.txt", "w") as f:
+            f.write("System Initialized\n")
+
+        with open("log.txt", "r") as f:
+            log_content = f.read()
+
+        print(log_content)
+      hints:
+        - "Use with open('log.txt', 'w') as f: f.write('System Initialized\\n')"
+        - "Use with open('log.txt', 'r') as f: log_content = f.read()"
+      difficulty: EASY
+      xp_reward: 15
+      visible_tests:
+        - name: "log_content contains 'System Initialized'"
+          assertion: "'System Initialized' in namespace.get('log_content', '')"
+      hidden_tests:
+        - name: "Output includes 'System Initialized'"
+          assertion: "'System Initialized' in stdout"

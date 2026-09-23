@@ -1,0 +1,5 @@
+id: mod-12-error-handling
+slug: module-12-error-handling
+title: "Module 12: Error Handling & Debugging"
+description: "Defend your code with try, except, finally blocks, understand exception types, and master traceback analysis."
+position: 12

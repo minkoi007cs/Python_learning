@@ -1,0 +1,74 @@
+id: lesson-errors-01
+slug: handling-exceptions
+title: Graceful Errors with try and except
+estimated_minutes: 12
+concept_ids:
+  - errors.try_except
+  - errors.exceptions
+
+sections:
+  - type: markdown
+    content: |
+      ### Catching Runtime Exceptions
+      When an unhandled error occurs, Python halts execution and prints a **traceback**. You can intercept errors gracefully using `try / except`.
+
+      ```python
+      try:
+          number = int("invalid_number")
+      except ValueError:
+          print("Could not parse integer!")
+      ```
+
+      ### Common Built-in Exceptions
+      - `ValueError`: Received invalid value for an operation.
+      - `ZeroDivisionError`: Attempted division by zero.
+      - `TypeError`: Incompatible operation between mismatched types.
+      - `IndexError`: Sequence index out of bounds.
+      - `KeyError`: Dictionary key does not exist.
+
+  - type: code_example
+    language: python
+    code: |
+      def safe_divide(a, b):
+          try:
+              return a / b
+          except ZeroDivisionError:
+              return 0.0
+
+      print(safe_divide(10, 2))  # 5.0
+      print(safe_divide(10, 0))  # 0.0
+    explanation: |
+      The `ZeroDivisionError` is caught safely, preventing program crashes.
+
+  - type: exercise
+    exercise:
+      id: ex-errors-01
+      title: Safe String to Integer Converter
+      instructions: |
+        Define a function named `parse_integer(text, default_value=0)`:
+        - It should try to convert `text` to an `int` using `int(text)`.
+        - If a `ValueError` occurs, it should catch it and return `default_value`.
+      starter_code: |
+        # Define parse_integer below:
+
+      solution_code: |
+        def parse_integer(text, default_value=0):
+            try:
+                return int(text)
+            except ValueError:
+                return default_value
+      hints:
+        - "Wrap int(text) inside a try block."
+        - "Use except ValueError: return default_value"
+      difficulty: EASY
+      xp_reward: 15
+      visible_tests:
+        - name: "Converts valid digits '42' to 42"
+          assertion: "namespace['parse_integer']('42') == 42"
+        - name: "Returns default 0 for invalid string 'abc'"
+          assertion: "namespace['parse_integer']('abc') == 0"
+        - name: "Respects custom default value -1"
+          assertion: "namespace['parse_integer']('xyz', -1) == -1"
+      hidden_tests:
+        - name: "Handles negative string integers"
+          assertion: "namespace['parse_integer']('-15') == -15"

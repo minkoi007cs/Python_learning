@@ -1,0 +1,5 @@
+id: mod-02-data-types
+slug: module-02-data-types
+title: "Module 2: Data Types"
+description: "Explore Python's fundamental data types: str, int, float, bool, None, and inspect them using type()."
+position: 2

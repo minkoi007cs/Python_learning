@@ -1,0 +1,5 @@
+id: mod-03-strings
+slug: module-03-strings
+title: "Module 3: Strings"
+description: "Master string manipulation: indexing, slicing, methods (.upper(), .strip()), and modern f-strings."
+position: 3

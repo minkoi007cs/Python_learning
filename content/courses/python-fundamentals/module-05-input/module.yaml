@@ -1,0 +1,5 @@
+id: mod-05-input
+slug: module-05-input
+title: "Module 5: User Input & Type Casting"
+description: "Accept interactive user input with input() and master explicit type casting with int(), float(), and str()."
+position: 5

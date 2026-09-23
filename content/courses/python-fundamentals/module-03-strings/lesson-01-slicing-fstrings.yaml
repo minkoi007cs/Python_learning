@@ -1,0 +1,72 @@
+id: lesson-strings-01
+slug: string-formatting-and-methods
+title: String Formatting & Methods
+estimated_minutes: 10
+concept_ids:
+  - strings.indexing
+  - strings.methods
+  - strings.fstrings
+
+sections:
+  - type: markdown
+    content: |
+      ### Indexing and Slicing
+      Strings in Python are zero-indexed sequences of characters.
+      - `word[0]` accesses the first character.
+      - `word[-1]` accesses the last character.
+      - `word[0:3]` slices from index 0 up to (but not including) index 3.
+
+      ### Modern Formatted Strings (f-strings)
+      Prefix a string with `f` to embed variables and expressions directly inside curly braces `{}`:
+      ```python
+      name = "Alex"
+      greeting = f"Welcome, {name}!"
+      print(greeting)  # "Welcome, Alex!"
+      ```
+
+      ### Common String Methods
+      - `.upper()` / `.lower()`: convert case
+      - `.strip()`: remove surrounding whitespace
+      - `.replace(old, new)`: substitute characters
+
+  - type: code_example
+    language: python
+    code: |
+      raw_email = "  USER@EXAMPLE.COM  "
+      clean_email = raw_email.strip().lower()
+      print(f"Sanitized email: {clean_email}")
+    explanation: |
+      `.strip()` removes outer spaces and `.lower()` makes all characters lowercase.
+
+  - type: exercise
+    exercise:
+      id: ex-strings-01
+      title: Username Generator
+      instructions: |
+        Create a formatted username using f-strings and string methods:
+        1. Given `first_name = "Guido"` and `birth_year = 1956`.
+        2. Create a variable `username` that combines the lowercase `first_name` and the `birth_year` using an f-string: e.g. `"guido_1956"`.
+        3. Print `username`.
+      starter_code: |
+        first_name = "Guido"
+        birth_year = 1956
+
+        # Create your username below:
+
+      solution_code: |
+        first_name = "Guido"
+        birth_year = 1956
+        username = f"{first_name.lower()}_{birth_year}"
+        print(username)
+      hints:
+        - "Use first_name.lower() to make the name lowercase."
+        - "Combine them using an f-string: f'{first_name.lower()}_{birth_year}'"
+        - "Print the resulting username."
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "Username is formatted as 'guido_1956'"
+          assertion: "namespace.get('username') == 'guido_1956'"
+      hidden_tests:
+        - name: "Output contains 'guido_1956'"
+          assertion: "'guido_1956' in stdout"

@@ -1,0 +1,73 @@
+id: lesson-types-01
+slug: primitive-data-types
+title: Fundamental Data Types & type()
+estimated_minutes: 10
+concept_ids:
+  - types.primitives
+  - types.introspection
+
+sections:
+  - type: markdown
+    content: |
+      ### Python's Core Data Types
+      Every value in Python has an associated **data type**:
+      1. `str` (String): Text enclosed in quotes, e.g. `"Python"`.
+      2. `int` (Integer): Whole positive or negative numbers, e.g. `42`, `-7`.
+      3. `float` (Floating-point): Numbers with decimal points, e.g. `3.14`, `0.5`.
+      4. `bool` (Boolean): True or false logical values: `True` or `False`.
+      5. `NoneType`: Represents the absence of a value: `None`.
+
+      ### Checking Types with `type()`
+      You can inspect the type of any value or variable by passing it to `type()`:
+      ```python
+      print(type("Hello"))  # <class 'str'>
+      print(type(42))       # <class 'int'>
+      ```
+
+  - type: code_example
+    language: python
+    code: |
+      price = 19.99
+      is_available = True
+      print(type(price))
+      print(type(is_available))
+    explanation: |
+      `price` is a `float`, and `is_available` is a `bool`.
+
+  - type: exercise
+    exercise:
+      id: ex-types-01
+      title: Build a Personal Profile
+      instructions: |
+        Create four variables representing a user profile:
+        1. `user_name`: a string with any name you like.
+        2. `user_age`: an integer with an age.
+        3. `user_rating`: a float with a decimal number (e.g. 4.8).
+        4. `is_active`: a boolean set to `True`.
+      starter_code: |
+        # Define the four variables:
+
+      solution_code: |
+        user_name = "Alex"
+        user_age = 25
+        user_rating = 4.8
+        is_active = True
+      hints:
+        - "Strings need quotation marks: user_name = 'Alex'"
+        - "Integers are whole numbers: user_age = 25"
+        - "Floats have decimals: user_rating = 4.8"
+        - "Booleans are True or False (capitalized): is_active = True"
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "user_name is a string"
+          assertion: "isinstance(namespace.get('user_name'), str)"
+        - name: "user_age is an integer"
+          assertion: "isinstance(namespace.get('user_age'), int)"
+        - name: "user_rating is a float"
+          assertion: "isinstance(namespace.get('user_rating'), float)"
+        - name: "is_active is a boolean"
+          assertion: "isinstance(namespace.get('is_active'), bool)"
+      hidden_tests:
+        - name: "is_active is True"
+          assertion: "namespace.get('is_active') is True"

@@ -1,0 +1,60 @@
+id: lesson-funcs-01
+slug: defining-functions
+title: Functions & Return Values
+estimated_minutes: 12
+concept_ids:
+  - functions.declaration
+  - functions.return
+  - functions.parameters
+
+sections:
+  - type: markdown
+    content: |
+      ### Declaring Functions with `def`
+      A **function** is a reusable block of code that performs a specific action. You define functions with `def`, followed by the name, parameters in `()`, and a colon `:`.
+
+      ```python
+      def greet(name):
+          return f"Hello, {name}!"
+      ```
+
+      ### `return` vs `print()`
+      `return` passes a value back to the caller so it can be stored in a variable or used in calculations. `print()` simply displays text on the screen and returns `None`.
+
+  - type: code_example
+    language: python
+    code: |
+      def calculate_rectangle_area(width, height):
+          return width * height
+
+      area = calculate_rectangle_area(5, 10)
+      print(f"Area: {area}")
+    explanation: |
+      `calculate_rectangle_area(5, 10)` computes `5 * 10` and returns `50`.
+
+  - type: exercise
+    exercise:
+      id: ex-funcs-01
+      title: "Function Challenge: Add & Multiply"
+      instructions: |
+        Define a function named `multiply_and_add` that accepts three numeric parameters: `a`, `b`, and `c`.
+        The function should return the result of `(a * b) + c`.
+      starter_code: |
+        # Define multiply_and_add below:
+
+      solution_code: |
+        def multiply_and_add(a, b, c):
+            return (a * b) + c
+      hints:
+        - "Use def multiply_and_add(a, b, c):"
+        - "Return (a * b) + c"
+      difficulty: EASY
+      xp_reward: 15
+      visible_tests:
+        - name: "multiply_and_add(2, 3, 4) returns 10"
+          assertion: "callable(namespace.get('multiply_and_add')) and namespace['multiply_and_add'](2, 3, 4) == 10"
+        - name: "multiply_and_add(5, 0, 7) returns 7"
+          assertion: "namespace['multiply_and_add'](5, 0, 7) == 7"
+      hidden_tests:
+        - name: "Handles negative numbers correctly"
+          assertion: "namespace['multiply_and_add'](-2, 3, 10) == 4"

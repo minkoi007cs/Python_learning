@@ -1,0 +1,67 @@
+id: lesson-dicts-01
+slug: working-with-dictionaries
+title: Key-Value Pairs with Dictionaries
+estimated_minutes: 12
+concept_ids:
+  - dicts.lookup
+  - dicts.mutation
+
+sections:
+  - type: markdown
+    content: |
+      ### What is a Dictionary?
+      A **dictionary** (`dict`) is an unordered collection of `key: value` associations enclosed in curly braces `{}`.
+      Keys must be unique and immutable (such as strings or numbers).
+
+      ```python
+      user = {"name": "Alex", "role": "Engineer", "level": 3}
+      ```
+
+      ### Dictionary Operations
+      - Lookup: `user["name"]` -> `"Alex"`
+      - Safe lookup with fallback: `user.get("age", 18)` -> returns 18 if "age" not found
+      - Add or Update: `user["level"] = 4`
+      - Delete: `del user["role"]`
+
+  - type: code_example
+    language: python
+    code: |
+      capitals = {"France": "Paris", "Japan": "Tokyo"}
+      capitals["Canada"] = "Ottawa"
+      print(f"Capital of Japan: {capitals.get('Japan')}")
+    explanation: |
+      Adds `"Canada": "Ottawa"` and retrieves the capital of Japan.
+
+  - type: exercise
+    exercise:
+      id: ex-dicts-01
+      title: Contact Book Lookup & Update
+      instructions: |
+        Given the initial contacts dictionary:
+        `contacts = {"Alice": "555-0100", "Bob": "555-0101"}`
+        1. Add `"Charlie"` with phone number `"555-0102"` to `contacts`.
+        2. Update `"Alice"`'s phone number to `"555-9999"`.
+        3. Print `contacts`.
+      starter_code: |
+        contacts = {"Alice": "555-0100", "Bob": "555-0101"}
+
+        # Update contacts below:
+
+      solution_code: |
+        contacts = {"Alice": "555-0100", "Bob": "555-0101"}
+        contacts["Charlie"] = "555-0102"
+        contacts["Alice"] = "555-9999"
+        print(contacts)
+      hints:
+        - "Use contacts['Charlie'] = '555-0102' to add Charlie."
+        - "Use contacts['Alice'] = '555-9999' to update Alice."
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "contacts contains Charlie"
+          assertion: "namespace.get('contacts', {}).get('Charlie') == '555-0102'"
+        - name: "Alice's phone is updated"
+          assertion: "namespace.get('contacts', {}).get('Alice') == '555-9999'"
+      hidden_tests:
+        - name: "Bob is preserved"
+          assertion: "namespace.get('contacts', {}).get('Bob') == '555-0101'"

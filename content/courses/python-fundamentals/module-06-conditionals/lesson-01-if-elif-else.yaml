@@ -1,0 +1,88 @@
+id: lesson-conditionals-01
+slug: if-elif-else-branching
+title: Decision Making with if, elif, and else
+estimated_minutes: 12
+concept_ids:
+  - conditionals.branching
+  - logic.operators
+
+sections:
+  - type: markdown
+    content: |
+      ### Branching Logic
+      Conditionals allow your program to take different paths depending on whether a boolean expression evaluates to `True` or `False`.
+
+      ```python
+      if score >= 90:
+          grade = "A"
+      elif score >= 80:
+          grade = "B"
+      else:
+          grade = "C"
+      ```
+
+      ### Comparison Operators
+      - `==` : Equal to
+      - `!=` : Not equal to
+      - `>` / `<` : Greater / Less than
+      - `>=` / `<=` : Greater or equal / Less or equal
+
+      ### Logical Operators
+      - `and` : Both conditions must be True
+      - `or` : At least one condition must be True
+      - `not` : Inverts boolean value
+
+  - type: code_example
+    language: python
+    code: |
+      temperature = 22
+      is_sunny = True
+
+      if temperature >= 20 and is_sunny:
+          print("Perfect day for a walk!")
+      else:
+          print("Stay inside and code.")
+    explanation: |
+      Both conditions evaluate to `True`, so the first branch executes.
+
+  - type: exercise
+    exercise:
+      id: ex-conditionals-01
+      title: Grade Calculator
+      instructions: |
+        Given `score = 85`.
+        Write an `if / elif / else` block to assign a letter `grade`:
+        - If `score >= 90`: assign `"A"` to `grade`
+        - Else if `score >= 80`: assign `"B"` to `grade`
+        - Else if `score >= 70`: assign `"C"` to `grade`
+        - Else: assign `"F"` to `grade`
+        Print `grade`.
+      starter_code: |
+        score = 85
+        grade = ""
+
+        # Write your if / elif / else logic below:
+
+      solution_code: |
+        score = 85
+        if score >= 90:
+            grade = "A"
+        elif score >= 80:
+            grade = "B"
+        elif score >= 70:
+            grade = "C"
+        else:
+            grade = "F"
+        print(grade)
+      hints:
+        - "Remember the colon : after each if, elif, and else header."
+        - "Indent the body of each branch by 4 spaces."
+        - "For score = 85, grade should evaluate to 'B'."
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "grade evaluates to 'B' for score 85"
+          assertion: "namespace.get('grade') == 'B'"
+      hidden_tests:
+        - name: "Outputs 'B'"
+          assertion: "'B' in stdout"

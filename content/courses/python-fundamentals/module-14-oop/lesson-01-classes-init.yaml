@@ -1,0 +1,86 @@
+id: lesson-oop-01
+slug: classes-and-objects
+title: Classes, Objects & Methods
+estimated_minutes: 15
+concept_ids:
+  - oop.classes
+  - oop.methods
+  - oop.init
+
+sections:
+  - type: markdown
+    content: |
+      ### Object-Oriented Programming (OOP)
+      A **class** is a blueprint for creating objects. An **object** is an instance of a class that holds its own data (attributes) and behavior (methods).
+
+      ### The `__init__` Constructor & `self`
+      `__init__` is automatically called when a new instance is created. `self` refers to the specific instance being operated on.
+
+      ```python
+      class Dog:
+          def __init__(self, name):
+              self.name = name
+
+          def bark(self):
+              return f"{self.name} says Woof!"
+      ```
+
+  - type: code_example
+    language: python
+    code: |
+      class User:
+          def __init__(self, username):
+              self.username = username
+              self.score = 0
+
+          def add_points(self, points):
+              self.score += points
+
+      u = User("Alex")
+      u.add_points(10)
+      print(f"{u.username}'s score: {u.score}")
+    explanation: |
+      `User` holds state (`score`) and updates it via method `add_points()`.
+
+  - type: exercise
+    exercise:
+      id: ex-oop-01
+      title: Bank Account Simulator
+      instructions: |
+        Create a class named `BankAccount`:
+        1. In `__init__(self, owner, balance=0.0)`: store `self.owner = owner` and `self.balance = float(balance)`.
+        2. Define a method `deposit(self, amount)`: adds `amount` to `self.balance` and returns the new balance.
+        3. Define a method `withdraw(self, amount)`: if `self.balance >= amount`, deducts `amount` and returns the new balance; otherwise returns `"Insufficient funds"`.
+      starter_code: |
+        # Define BankAccount class below:
+
+      solution_code: |
+        class BankAccount:
+            def __init__(self, owner, balance=0.0):
+                self.owner = owner
+                self.balance = float(balance)
+
+            def deposit(self, amount):
+                self.balance += amount
+                return self.balance
+
+            def withdraw(self, amount):
+                if self.balance >= amount:
+                    self.balance -= amount
+                    return self.balance
+                return "Insufficient funds"
+      hints:
+        - "Initialize balance as float(balance)."
+        - "In withdraw, check if self.balance >= amount before subtracting."
+      difficulty: MEDIUM
+      xp_reward: 20
+      visible_tests:
+        - name: "Deposit increases balance"
+          assertion: "acc = namespace['BankAccount']('Alex', 100.0); acc.deposit(50.0) == 150.0"
+        - name: "Withdraw decreases balance"
+          assertion: "acc = namespace['BankAccount']('Alex', 100.0); acc.withdraw(30.0) == 70.0"
+        - name: "Overdraw returns Insufficient funds"
+          assertion: "acc = namespace['BankAccount']('Alex', 20.0); acc.withdraw(50.0) == 'Insufficient funds'"
+      hidden_tests:
+        - name: "Default initial balance is 0.0"
+          assertion: "acc = namespace['BankAccount']('Alex'); acc.balance == 0.0"

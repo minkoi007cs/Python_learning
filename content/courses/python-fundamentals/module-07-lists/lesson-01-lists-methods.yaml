@@ -1,0 +1,72 @@
+id: lesson-lists-01
+slug: working-with-lists
+title: Creating & Modifying Lists
+estimated_minutes: 12
+concept_ids:
+  - lists.creation
+  - lists.mutation
+  - lists.methods
+
+sections:
+  - type: markdown
+    content: |
+      ### What is a List?
+      A **list** is an ordered, mutable sequence of elements enclosed in square brackets `[]`.
+      Elements can be any type, and lists can change size dynamically.
+
+      ```python
+      fruits = ["apple", "banana", "cherry"]
+      ```
+
+      ### Key List Operations
+      - `len(fruits)`: returns the number of items (3)
+      - `fruits.append("orange")`: adds an item to the end
+      - `fruits.pop()`: removes and returns the last item
+      - `fruits.remove("banana")`: removes the first occurrence of "banana"
+      - `"apple" in fruits`: checks for membership (evaluates to `True`)
+
+  - type: code_example
+    language: python
+    code: |
+      tasks = ["Code", "Eat"]
+      tasks.append("Sleep")
+      print(f"Task count: {len(tasks)}")
+      print(tasks)
+    explanation: |
+      Appending `"Sleep"` extends the list length from 2 to 3.
+
+  - type: exercise
+    exercise:
+      id: ex-lists-01
+      title: Shopping List Manager
+      instructions: |
+        1. Create a list named `cart` with the items `["apples", "milk"]`.
+        2. Append `"bread"` to `cart`.
+        3. Append `"eggs"` to `cart`.
+        4. Print the final `cart` and its length using `len(cart)`.
+      starter_code: |
+        # Initialize cart:
+        cart = ["apples", "milk"]
+
+        # Append items and print:
+
+      solution_code: |
+        cart = ["apples", "milk"]
+        cart.append("bread")
+        cart.append("eggs")
+        print(cart)
+        print(len(cart))
+      hints:
+        - "Use cart.append('bread') to add bread."
+        - "Use cart.append('eggs') to add eggs."
+        - "Use len(cart) to get the item count."
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "cart contains 4 items"
+          assertion: "len(namespace.get('cart', [])) == 4"
+        - name: "cart contains bread and eggs"
+          assertion: "'bread' in namespace.get('cart', []) and 'eggs' in namespace.get('cart', [])"
+      hidden_tests:
+        - name: "cart preserves initial items"
+          assertion: "namespace.get('cart', [])[:2] == ['apples', 'milk']"

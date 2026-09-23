@@ -1,0 +1,70 @@
+id: lesson-input-01
+slug: user-input-and-casting
+title: User Input & Type Casting
+estimated_minutes: 10
+concept_ids:
+  - input.reading
+  - types.casting
+
+sections:
+  - type: markdown
+    content: |
+      ### Reading User Input
+      The `input()` function pauses execution and waits for the user to type text in the console and hit Enter.
+      **Crucial rule**: `input()` always returns a **string (`str`)**, even if the user typed numbers!
+
+      ### Type Casting
+      To do math with user input, you must explicitly convert it:
+      - `int("25")` -> integer `25`
+      - `float("19.99")` -> float `19.99`
+      - `str(100)` -> string `"100"`
+
+  - type: code_example
+    language: python
+    code: |
+      age_str = "20"
+      age = int(age_str)
+      next_year = age + 1
+      print(f"Next year you will be {next_year}")
+    explanation: |
+      Converting `age_str` to an `int` allows mathematical addition with `+ 1`.
+
+  - type: exercise
+    exercise:
+      id: ex-input-01
+      title: Cast & Compute Bill Tip
+      instructions: |
+        Given string values representing bill and tip inputs:
+        `raw_bill = "50.0"`
+        `raw_tip_percent = "15"`
+        1. Cast `raw_bill` to a `float` and store in `bill`.
+        2. Cast `raw_tip_percent` to a `float` and store in `tip_percent`.
+        3. Calculate `tip_amount = bill * (tip_percent / 100.0)`.
+        4. Calculate `total_bill = bill + tip_amount`.
+        5. Print `total_bill`.
+      starter_code: |
+        raw_bill = "50.0"
+        raw_tip_percent = "15"
+
+        # Cast and compute total_bill below:
+
+      solution_code: |
+        raw_bill = "50.0"
+        raw_tip_percent = "15"
+        bill = float(raw_bill)
+        tip_percent = float(raw_tip_percent)
+        tip_amount = bill * (tip_percent / 100.0)
+        total_bill = bill + tip_amount
+        print(total_bill)
+      hints:
+        - "Use float(raw_bill) to convert the bill to a floating point number."
+        - "Compute tip_amount as bill * (tip_percent / 100.0)."
+        - "Add bill and tip_amount to get total_bill."
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "total_bill is 57.5"
+          assertion: "round(namespace.get('total_bill', 0), 2) == 57.5"
+      hidden_tests:
+        - name: "tip_amount is 7.5"
+          assertion: "round(namespace.get('tip_amount', 0), 2) == 7.5"

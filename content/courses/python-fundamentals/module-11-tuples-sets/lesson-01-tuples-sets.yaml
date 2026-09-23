@@ -1,0 +1,71 @@
+id: lesson-tuples-01
+slug: tuples-and-sets
+title: Tuples, Sets & Uniqueness
+estimated_minutes: 10
+concept_ids:
+  - tuples.immutability
+  - sets.uniqueness
+  - sets.operations
+
+sections:
+  - type: markdown
+    content: |
+      ### Tuples: Immutable Sequences
+      A **tuple** is an ordered collection defined with parentheses `()`. Unlike lists, tuples are **immutable**—once created, their items cannot be modified, added, or removed.
+
+      ```python
+      coordinates = (10, 20)
+      # coordinates[0] = 15  <- Causes TypeError!
+      ```
+
+      ### Sets: Unique Unordered Collections
+      A **set** is an unordered collection defined with `{}` (with comma-separated items without colons) that automatically deduplicates values.
+
+      ```python
+      unique_ids = {1, 2, 2, 3, 3, 3}  # Evaluates to {1, 2, 3}
+      ```
+
+  - type: code_example
+    language: python
+    code: |
+      team_a = {"Python", "JavaScript", "SQL"}
+      team_b = {"Python", "Rust", "Go"}
+      shared_skills = team_a.intersection(team_b)
+      print(f"Shared skills: {shared_skills}")
+    explanation: |
+      `.intersection()` returns elements common to both sets: `{'Python'}`.
+
+  - type: exercise
+    exercise:
+      id: ex-tuples-01
+      title: Deduplicate Tags with a Set
+      instructions: |
+        Given a list with duplicate tags:
+        `raw_tags = ["python", "code", "python", "backend", "code"]`
+        1. Convert `raw_tags` into a set named `unique_tags` to eliminate duplicates.
+        2. Create a tuple named `origin_coords` containing the integers `(0, 0)`.
+        3. Print `unique_tags` and `origin_coords`.
+      starter_code: |
+        raw_tags = ["python", "code", "python", "backend", "code"]
+
+        # Define unique_tags and origin_coords:
+
+      solution_code: |
+        raw_tags = ["python", "code", "python", "backend", "code"]
+        unique_tags = set(raw_tags)
+        origin_coords = (0, 0)
+        print(unique_tags)
+        print(origin_coords)
+      hints:
+        - "Use set(raw_tags) to convert the list into a set."
+        - "Use parentheses (0, 0) for the tuple."
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "unique_tags contains 3 distinct items"
+          assertion: "isinstance(namespace.get('unique_tags'), set) and len(namespace['unique_tags']) == 3"
+        - name: "origin_coords is a tuple of (0, 0)"
+          assertion: "namespace.get('origin_coords') == (0, 0)"
+      hidden_tests:
+        - name: "origin_coords is immutable"
+          assertion: "isinstance(namespace.get('origin_coords'), tuple)"

@@ -1,0 +1,5 @@
+id: mod-10-dictionaries
+slug: module-10-dictionaries
+title: "Module 10: Dictionaries"
+description: "Master key-value hash mappings in Python: lookups, additions, modifications, .get() defaults, and dictionary iteration."
+position: 10

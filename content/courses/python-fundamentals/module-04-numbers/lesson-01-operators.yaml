@@ -1,0 +1,64 @@
+id: lesson-numbers-01
+slug: arithmetic-operators
+title: Arithmetic Operators & Precedence
+estimated_minutes: 10
+concept_ids:
+  - numbers.arithmetic
+  - numbers.precedence
+
+sections:
+  - type: markdown
+    content: |
+      ### Python Arithmetic Operators
+      Python supports all standard math operators:
+      - `+` : Addition (`5 + 2 == 7`)
+      - `-` : Subtraction (`10 - 4 == 6`)
+      - `*` : Multiplication (`3 * 4 == 12`)
+      - `/` : Floating-point division (`7 / 2 == 3.5`)
+      - `//` : Floor division (discards decimal: `7 // 2 == 3`)
+      - `%` : Modulo (remainder: `7 % 2 == 1`)
+      - `**` : Exponentiation / Power (`2 ** 3 == 8`)
+
+      ### Order of Operations (PEMDAS)
+      Parentheses `()` always take highest priority, followed by exponents `**`, multiplication/division `*`, `/`, `//`, `%`, and finally addition/subtraction `+`, `-`.
+
+  - type: code_example
+    language: python
+    code: |
+      items = 14
+      boxes = items // 4
+      leftover = items % 4
+      print(f"Full boxes: {boxes}, Leftovers: {leftover}")
+    explanation: |
+      14 items in boxes of 4 leaves 3 full boxes and 2 leftover items.
+
+  - type: exercise
+    exercise:
+      id: ex-numbers-01
+      title: Temperature Converter
+      instructions: |
+        Convert Fahrenheit to Celsius using the standard formula:
+        `celsius = (fahrenheit - 32) * 5 / 9`
+        1. Given `fahrenheit = 68.0`.
+        2. Calculate `celsius` and store it in the variable `celsius`.
+        3. Print `celsius`.
+      starter_code: |
+        fahrenheit = 68.0
+
+        # Calculate celsius below:
+
+      solution_code: |
+        fahrenheit = 68.0
+        celsius = (fahrenheit - 32) * 5 / 9
+        print(celsius)
+      hints:
+        - "Use parentheses around (fahrenheit - 32) to ensure subtraction happens before multiplication."
+        - "Multiply by 5 and divide by 9: (fahrenheit - 32) * 5 / 9"
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "celsius is calculated as 20.0"
+          assertion: "round(namespace.get('celsius', 0), 1) == 20.0"
+      hidden_tests:
+        - name: "celsius is a float"
+          assertion: "isinstance(namespace.get('celsius'), float)"

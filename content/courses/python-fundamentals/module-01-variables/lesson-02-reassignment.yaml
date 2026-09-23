@@ -1,0 +1,64 @@
+id: lesson-vars-02
+slug: variable-reassignment
+title: Changing & Updating Variables
+estimated_minutes: 8
+concept_ids:
+  - variables.reassignment
+  - variables.state
+
+sections:
+  - type: markdown
+    content: |
+      ### Variables Can Vary!
+      The value stored inside a variable can be changed anytime by assigning a new value to it with `=`.
+
+      ```python
+      score = 0
+      print(score)  # Prints 0
+
+      score = 50
+      print(score)  # Prints 50
+      ```
+
+      When you reassign a variable, Python discards the old value and binds the name to the new one.
+
+  - type: code_example
+    language: python
+    code: |
+      current_task = "Reading"
+      print(current_task)
+
+      current_task = "Writing Code"
+      print(current_task)
+    explanation: |
+      The variable `current_task` changes from `"Reading"` to `"Writing Code"`.
+
+  - type: exercise
+    exercise:
+      id: ex-vars-02
+      title: Reassign a Game Score
+      instructions: |
+        1. Create a variable `score` set to `10`.
+        2. On the next line, reassign `score` so that its value becomes `25`.
+        3. Print `score`.
+      starter_code: |
+        # Initial score
+        score = 10
+
+        # Update score below:
+
+      solution_code: |
+        score = 10
+        score = 25
+        print(score)
+      hints:
+        - "Assign the new value directly: score = 25"
+        - "Don't forget to call print(score)"
+      difficulty: EASY
+      xp_reward: 10
+      visible_tests:
+        - name: "Final score is 25"
+          assertion: "namespace.get('score') == 25"
+      hidden_tests:
+        - name: "Outputs 25"
+          assertion: "'25' in stdout"
