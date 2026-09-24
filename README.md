@@ -2,7 +2,7 @@
 
 > **Interactive, In-Browser Python Learning Platform Engineered for Deep Mastery**
 
-[![CI](https://github.com/your-org/pypath/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/pypath/actions/workflows/ci.yml)
+[![CI](https://github.com/minkoi007cs/Python_learning/actions/workflows/ci.yml/badge.svg)](https://github.com/minkoi007cs/Python_learning/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Next.js 14](https://img.shields.io/badge/next.js-14-black.svg)](https://nextjs.org/)
@@ -167,8 +167,8 @@ Module 15: Modules & Standard Library (random, math, datetime)
 ### Quickstart
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-username/pypath.git
-cd pypath
+git clone https://github.com/minkoi007cs/Python_learning.git
+cd Python_learning
 
 # 2. Configure environment
 cp .env.example .env
