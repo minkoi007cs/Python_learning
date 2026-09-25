@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="pyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1b2a"/>
+      <stop offset="100%" stop-color="#1b263b"/>
+    </linearGradient>
+    <linearGradient id="pyBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pyYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#pyBg)" stroke="url(#pyBlue)" stroke-width="2"/>
+  <path d="M31 15 C23 15 20 18 20 23 L20 28 L32 28 L32 30 L16 30 C12 30 14 39 18 39 L22 39 L22 35 C22 32 25 30 28 30 L37 30 C41 30 44 27 44 23 L44 19 C44 16 41 15 37 15 Z" fill="url(#pyBlue)"/>
+  <circle cx="25" cy="20" r="1.5" fill="#ffffff"/>
+  <path d="M33 49 C41 49 44 46 44 41 L44 36 L32 36 L32 34 L48 34 C52 34 50 25 46 25 L42 25 L42 29 C42 32 39 34 36 34 L27 34 C23 34 20 37 20 41 L20 45 C20 48 23 49 27 49 Z" fill="url(#pyYellow)"/>
+  <circle cx="39" cy="44" r="1.5" fill="#ffffff"/>
+</svg>
